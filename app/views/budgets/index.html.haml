@@ -17,8 +17,8 @@
         %td= link_to budget.id, budget_path(budget)
         %td= link_to budget.name, budget_path(budget)
         %td= link_to budget.description, budget_path(budget)
-        %td= link_to budget.amount, budget_path(budget)
-        %td= link_to budget.amount_per_project, budget_path(budget)
+        %td= link_to number_to_currency(budget.amount), budget_path(budget)
+        %td= link_to number_to_currency(budget.amount_per_project), budget_path(budget)
         - if can? :manage, budget
           %td
             = link_to t('.edit', :default => t("helpers.links.edit")), edit_budget_path(budget), :class => 'btn btn-default btn-xs'
