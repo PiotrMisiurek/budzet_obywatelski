@@ -19,6 +19,17 @@
   %br
   = @budget.amount_per_project
 
+%ul.list-inline
+  %li
+    %h2 Projekty
+  %li= link_to 'Dodaj nowy', new_budget_project_path(budget_id: @budget), class: 'btn btn-primary'
+%ul
+  - @budget.projects.each do |project|
+    %li
+      %ul.list-inline
+        %li
+          %h4= project.name
+
 
 = link_to t('.back', :default => t("helpers.links.back")), budgets_path, :class => 'btn btn-default'
 - if can? :manage, @budget
