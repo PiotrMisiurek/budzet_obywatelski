@@ -17,5 +17,10 @@
 
 
 = link_to t('.back', :default => t("helpers.links.back")), @budget, :class => 'btn btn-default'
-= link_to 'Zagłosuj', budget_project_votes_path(budget_id: @budget, project_id: @project), method: :post, class: 'btn btn-danger'
+
+- if @budget.voted_by?(current_user)
+  .alert.alert-success
+    Już oddałeś głos w ramach tego budżetu
+- else
+  = link_to 'Zagłosuj', budget_project_votes_path(budget_id: @budget, project_id: @project), method: :post, class: 'btn btn-danger'
 
