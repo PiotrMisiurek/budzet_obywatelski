@@ -32,6 +32,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'devise-bootstrap-views'
 
+gem 'cancan'
+
 
 
 # Use ActiveModel has_secure_password
