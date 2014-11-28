@@ -1,0 +1,25 @@
+%h1 Listing budgets
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Amount
+    %th Amount per project
+    %th
+    %th
+    %th
+
+  - @budgets.each do |budget|
+    %tr
+      %td= budget.name
+      %td= budget.description
+      %td= budget.amount
+      %td= budget.amount_per_project
+      %td= link_to 'Show', budget
+      %td= link_to 'Edit', edit_budget_path(budget)
+      %td= link_to 'Destroy', budget, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Budget', new_budget_path

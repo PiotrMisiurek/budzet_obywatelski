@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @budget.name
+%p
+  %b Description:
+  = @budget.description
+%p
+  %b Amount:
+  = @budget.amount
+%p
+  %b Amount per project:
+  = @budget.amount_per_project
+
+= link_to 'Edit', edit_budget_path(@budget)
+\|
+= link_to 'Back', budgets_path
