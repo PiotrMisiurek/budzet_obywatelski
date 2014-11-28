@@ -3,6 +3,6 @@ class Project < ActiveRecord::Base
   belongs_to :budget
 
   def votes
-    Vote.count(project_id: self.id)
+    Vote.where(project_id: self.id).count
   end
 end
