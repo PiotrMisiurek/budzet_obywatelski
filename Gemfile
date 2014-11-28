@@ -32,7 +32,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'devise-bootstrap-views'
 
-gem 'cancan'
+gem 'cancancan', '~> 1.9'
 
 
 
