@@ -26,7 +26,7 @@
 %ul
   - @budget.projects.each do |project|
     %li
-      %h4= link_to project.name, [@budget, project]
+      %h4= link_to "#{project.name} (#{project.votes} głosów)", [@budget, project]
 
 
 = link_to t('.back', :default => t("helpers.links.back")), budgets_path, :class => 'btn btn-default'
