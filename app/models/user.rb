@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   before_create :make_admin_if_first
 
+  has_many :projects
+
   private
 
   def make_admin_if_first
