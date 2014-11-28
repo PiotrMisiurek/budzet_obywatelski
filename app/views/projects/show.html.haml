@@ -17,4 +17,5 @@
 
 
 = link_to t('.back', :default => t("helpers.links.back")), @budget, :class => 'btn btn-default'
+= link_to 'Zagłosuj', budget_project_votes_path(budget_id: @budget, project_id: @project), method: :post, class: 'btn btn-danger'
 
