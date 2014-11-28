@@ -4,13 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  before_create :make_super_user_if_first
+  before_create :make_admin_if_first
 
   private
 
-  def make_super_user_if_first
+  def make_admin_if_first
     if User.count == 0
-      self.super_user = 1
+      self.admin = 1
     end
   end
 end
