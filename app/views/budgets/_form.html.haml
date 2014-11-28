@@ -1,22 +1,23 @@
-= form_for @budget do |f|
-  - if @budget.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@budget.errors.count, "error")} prohibited this budget from being saved:"
-      %ul
-        - @budget.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :amount
-    = f.number_field :amount
-  .field
-    = f.label :amount_per_project
-    = f.number_field :amount_per_project
-  .actions
-    = f.submit 'Save'
+= form_for @budget, html: { class: "form form-horizontal budget" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@budget[:name])
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control', required: true
+    = error_span(@budget[:description])
+  .form-group
+    = f.label :amount, class: 'control-label'
+    .controls
+      = f.text_field :amount, class: 'form-control', required: true
+    = error_span(@budget[:amount])
+  .form-group
+    = f.label :amount_per_project, class: 'control-label'
+    .controls
+      = f.text_field :amount_per_project, class: 'form-control', required: true
+    = error_span(@budget[:amount_per_project])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), budgets_path, :class => 'btn btn-default'
