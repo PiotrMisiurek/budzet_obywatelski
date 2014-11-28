@@ -26,9 +26,7 @@
 %ul
   - @budget.projects.each do |project|
     %li
-      %ul.list-inline
-        %li
-          %h4= project.name
+      %h4= project.name
 
 
 = link_to t('.back', :default => t("helpers.links.back")), budgets_path, :class => 'btn btn-default'
