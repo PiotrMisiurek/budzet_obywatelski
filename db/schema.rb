@@ -11,16 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128175701) do
+ActiveRecord::Schema.define(version: 20141128192954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: true do |t|
+    t.string   "first_name"
+    t.string   "second_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "zip_code"
+    t.string   "id_number"
+    t.string   "personal_number"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "budgets", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "amount"
     t.integer  "amount_per_project"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "personal_data", force: true do |t|
+    t.string   "first_name"
+    t.string   "second_name"
+    t.string   "last_name"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "id_number"
+    t.string   "personal_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "amount"
+    t.integer  "budget_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
