@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   before_action :set_parents
+  before_action :cheating_protection
 
   def create
     @vote = Vote.new
@@ -15,6 +16,12 @@ class VotesController < ApplicationController
   def set_parents
     @budget = Budget.find(params[:budget_id])
     @project = @budget.projects.find(params[:project_id])
+  end
+
+  def cheating_protection
+    if @budget.voted_by?(current_user)
+      redirect_to @budget, error: 'Nie można głosować dwa razy w ramach tego samego budżetu' and return
+    end
   end
 
 end
