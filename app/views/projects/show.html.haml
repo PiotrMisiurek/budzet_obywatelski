@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @project.name
+%p
+  %b Description:
+  = @project.description
+%p
+  %b Amount:
+  = @project.amount
+%p
+  %b Budget:
+  = @project.budget_id
+%p
+  %b User:
+  = @project.user_id
+
+= link_to 'Edit', edit_project_path(@project)
+\|
+= link_to 'Back', projects_path

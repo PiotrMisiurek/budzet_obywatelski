@@ -1,0 +1,53 @@
+= form_for @address, html: { class: "form form-horizontal address" } do |f|
+  .form-group
+    = f.label :first_name, class: 'control-label'
+    .controls
+      = f.text_field :first_name, class: 'form-control', required: true
+    = error_span(@address[:first_name])
+  .form-group
+    = f.label :second_name, class: 'control-label'
+    .controls
+      = f.text_field :second_name, class: 'form-control', required: true
+    = error_span(@address[:second_name])
+  .form-group
+    = f.label :last_name, class: 'control-label'
+    .controls
+      = f.text_field :last_name, class: 'form-control', required: true
+    = error_span(@address[:last_name])
+  .form-group
+    = f.label :city, class: 'control-label'
+    .controls
+      = f.text_field :city, class: 'form-control', required: true
+    = error_span(@address[:city])
+  .form-group
+    = f.label :address_line_1, class: 'control-label'
+    .controls
+      = f.text_field :address_line_1, class: 'form-control', required: true
+    = error_span(@address[:address_line_1])
+  .form-group
+    = f.label :address_line_2, class: 'control-label'
+    .controls
+      = f.text_field :address_line_2, class: 'form-control', required: true
+    = error_span(@address[:address_line_2])
+  .form-group
+    = f.label :zip_code, class: 'control-label'
+    .controls
+      = f.text_field :zip_code, class: 'form-control', required: true
+    = error_span(@address[:zip_code])
+  .form-group
+    = f.label :id_number, class: 'control-label'
+    .controls
+      = f.text_field :id_number, class: 'form-control', required: true
+    = error_span(@address[:id_number])
+  .form-group
+    = f.label :personal_number, class: 'control-label'
+    .controls
+      = f.text_field :personal_number, class: 'form-control', required: true
+    = error_span(@address[:personal_number])
+  .form-group
+    = f.label :user_id, class: 'control-label'
+    .controls
+      = f.text_field :user_id, class: 'form-control', required: true
+    = error_span(@address[:user_id])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), addresses_path, :class => 'btn btn-default'
