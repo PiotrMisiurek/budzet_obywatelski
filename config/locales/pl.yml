@@ -234,3 +234,19 @@ pl:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: po południu
+
+  activerecord:
+    models:
+      budget: Budżet
+      project: Projekt
+    attributes:
+      budget:
+        name: Nazwa
+        description: Opis
+        amount: Ogólna kwota na wszystkie projekty
+        amount_per_project: Kwota per projekt
+      project:
+        name: Nazwa
+        description: Opis projektu
+        amount: Kwota potrzebna na zrealizowanie projektu
+
