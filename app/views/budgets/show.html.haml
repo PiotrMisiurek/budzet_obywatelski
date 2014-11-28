@@ -16,11 +16,11 @@
 %p
   %strong= model_class.human_attribute_name(:amount) + ':'
   %br
-  = @budget.amount
+  = number_to_currency @budget.amount
 %p
   %strong= model_class.human_attribute_name(:amount_per_project) + ':'
   %br
-  = @budget.amount_per_project
+  = number_to_currency @budget.amount_per_project
 
 %ul.list-inline
   %li
